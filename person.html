@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Наш кореш</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="assets/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="assets/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" class="mx-2" alt="" width="30" height="24">
+          Кукурузник</a>
+        <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle
+        navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active"
+              href="index.html"><i class="bi-house mx-1"></i> Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="products.html">
+                <i class="bi-basket-fill mx-1"></i> Фильмы</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">
+                <i class="bi-box mx-1"></i>О нас</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>      
+  </header>
+  <main class="container">
+    <div class="card shadow rounded my-3">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-2">
+            <img id="personImage" src="" alt="user" class="product-image">
+          </div>
+          <div class="col-md-10 d-flex flex-column">
+            <div id="personName" class="product-name"></div>
+            <div id="personDescription" class="product-description"></div>
+            <div class="flex-grow-1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+  </footer>
+  <script>
+    (() => {
+      const persons = [
+        {
+          name: "Олег",
+          description: "Крутой парень, нет слов"
+        },
+        {
+          name: "Икс",
+          description: "Работает в положении по оси X"
+        },
+        {
+          name: "Игрик",
+          description: "Не Игорь Николаевич, а Игорь Николаевич"
+        },
+      ]
+
+      const searchParams = new URLSearchParams(window.location.search);
+      if (!(searchParams.has('id'))) {
+        return
+      }
+      const id = parseInt(searchParams.get('id'));
+      if (id !== 0 && !id || id >= persons.length) {
+        return
+      }
+
+      console.log(id)
+      const data = persons[id]
+
+      document.getElementById("personImage").src = "assets/img/p" + id + ".png"
+      document.getElementById("personName").innerText = data.name
+      document.getElementById("personDescription").innerText = data.description
+    })()
+  </script>
+</body>
+</html>

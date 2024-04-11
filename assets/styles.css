@@ -1,0 +1,49 @@
+.avatar {
+  border-radius: 50%;
+  width: 100%;
+}  
+.avatar-post {
+  margin-top: 1rem; /* отступ сверху */
+  font-size: 1.4rem; /* увеличить размер шрифта */
+  text-align: center; /* выровнять текст по центру*/
+}
+.avatar-text {
+  color: rgb(140, 140, 140); /* цвет текста - серый*/
+  font-size: 1.1rem; /* увеличить размер шрифта */
+  text-align: center; /* выровнять текст по центру*/
+}
+.avatar-mail {
+  color: rgb(140, 140, 140); /* цвет текста - серый*/
+  font-size: 1rem; /* увеличить размер шрифта */
+  text-align: center; /* выровнять текст по центру*/
+}
+
+.card-body:hover {
+  box-shadow: 0 0.5rem 1.0rem rgba(0, 0, 0, 0.1);
+  transition: all 0.25s ease;
+}
+.col-md-4 > .card {
+  height: calc(100% - 24px);
+}
+
+.product-image { /* Оформление фото товара */
+  width: 100%; /* ширина 100% */
+  border-radius: 0.5rem; /* скругление блока (углов) на 0.5rem */
+  border: 1px solid rgb(210, 210, 210); /* рамка вокруг блока с шириной
+  1px, сплошная, серая */
+}
+.product-name { /* Оформление наименования товара */
+  font-size: 1.4rem; /* увеличить размер шрифта */
+}
+.product-description { /* Оформление описания товара */
+  font-size: 1.1rem; /* увеличить размер шрифта */
+  color: rgb(60, 60, 60); /* цвет текста - темно-серый*/
+}
+.product-price { /* Оформление цены товара */
+  padding: 0.5rem; /* отступ внутри блока 0.5rem со всех сторон */
+  border-radius: 0.5rem; /* скругление блока (углов) на 0.5rem */
+  border: 1px solid rgb(210, 210, 210); /* рамка вокруг блока с шириной
+  1px, сплошная, серая */
+  margin: 0 1rem; /* отступ по горизонтали 1rem */
+}
+  
