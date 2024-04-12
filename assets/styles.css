@@ -47,3 +47,6 @@
   margin: 0 1rem; /* отступ по горизонтали 1rem */
 }
   
+.btn-inner-events-none {
+  pointer-events: none;
+}

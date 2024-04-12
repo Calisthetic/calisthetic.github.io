@@ -121,7 +121,7 @@
           <td>Шлем не взял - пыль наглотал</td>
           <td>Хотел мопед, а купил мотоцикл</td>
           <td>
-            <button data-name="Шлем не взял - пыль наглотал" class="btn-add-to-cart btn btn-warning" title="В корзину">
+            <button data-name="Шлем не взял - пыль наглотал" class="btn-add-to-cart btn-inner-events-none btn btn-warning" title="В корзину">
               <i class="bi bi-cart"></i> <span class="d-none d-md-inline">
                 <strong>100 р.</strong>
               </span>
@@ -133,7 +133,7 @@
           <td>Аватар: Восстание предков</td>
           <td>Обезъяны тоже хотят летать на драконах!</td>
           <td>
-            <button data-name="Аватар: Восстание предков" class="btn-add-to-cart btn btn-warning" title="В корзину">
+            <button data-name="Аватар: Восстание предков" class="btn-add-to-cart btn-inner-events-none btn btn-warning" title="В корзину">
               <i class="bi bi-cart"></i> <span class="d-none d-md-inline">
                 <strong>250 р.</strong>
               </span>
@@ -145,7 +145,7 @@
           <td>Кошачья челюсть</td>
           <td>Лысый кот кошмарит людей</td>
           <td>
-            <button data-name="Кошачья челюсть" class="btn-add-to-cart btn btn-warning" title="В корзину">
+            <button data-name="Кошачья челюсть" class="btn-add-to-cart btn-inner-events-none btn btn-warning" title="В корзину">
               <i class="bi bi-cart"></i> <span class="d-none d-md-inline">
                 <strong>500 р.</strong>
               </span>
@@ -159,13 +159,13 @@
   </footer>
 
   <script>
-    function cartClickHandler(e) {
-      alert("В корзину: " + e.target.dataset.name)
+    function cartClickHandler(e, name) {
+      alert("В корзину: " + name)
     }
 
     const cartButtons = document.getElementsByClassName("btn-add-to-cart")
     for (let i = 0; i < cartButtons.length; i++) {
-      cartButtons[i].addEventListener("click", cartClickHandler)
+      cartButtons[i].addEventListener("click", (e) => cartClickHandler(e, cartButtons[i].dataset.name))
     }
   </script>
 </body>
